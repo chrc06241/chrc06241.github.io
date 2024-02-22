@@ -1,0 +1,60 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  box-shadow: 0px 0px 15px black;
+  background-color: rgba(34, 25, 58, 0.8);
+
+  p {
+    margin: 0 20px;
+  }
+
+  ul {
+    display: flex;
+    margin-bottom: unset;
+    li {
+      margin: 0 20px;
+      a {
+        opacity: .5;
+      }
+      a.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .nav-container {
+    height: 70px;
+    padding: 0 30px;
+
+    & > p {
+      margin: 0;
+    }
+    button {
+      display: block;
+      background-color: unset;
+      border: none;
+      padding: 0;
+      i {
+        font-size: 35px;
+        color: #ded9efd6;
+      }
+    }
+    .desktop-list {
+      display: none;
+    }
+  }
+}

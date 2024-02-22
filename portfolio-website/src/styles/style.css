@@ -1,0 +1,419 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Noto Sans TC", sans-serif;
+  letter-spacing: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.App {
+  width: 100vw;
+  height: auto;
+  overflow: auto;
+}
+.App::-webkit-scrollbar {
+  width: 5px;
+}
+.App .background {
+  width: 100%;
+  height: 100vh;
+  background-color: #22193A;
+  position: fixed;
+  overflow: hidden;
+  z-index: -999;
+}
+.App .background .circle {
+  width: 1200px;
+  height: 1200px;
+  border-radius: 50%;
+  position: absolute;
+  left: -120px;
+  top: 150px;
+  background: linear-gradient(35deg, rgb(156, 32, 32) 0%, rgba(255, 255, 0, 0) 80%);
+}
+.App section {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+.App .homepage {
+  top: 0;
+}
+@keyframes flashing {
+  0%, 100% {
+    text-shadow: 0px 0px 40px #d895ff, 0px 0px 10px #974dff;
+  }
+  50% {
+    text-shadow: 0px 0px 70px #e2b1ff, 0px 0px 50px #974dff, 0px 0px 20px #e2e1ff;
+  }
+}
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+.App .homepage img {
+  margin-left: 8vw;
+  height: 100vh;
+  opacity: 0.6;
+  transition: all 150ms linear;
+}
+.App .homepage img:hover {
+  opacity: 1;
+  transition: all 150ms linear;
+}
+.App .homepage .text {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  font-size: 4vw;
+  animation: levitate 1.5s linear infinite alternate;
+}
+.App .homepage .text p {
+  letter-spacing: 6px;
+  font-family: sans-serif;
+  animation: flashing 3s ease-in-out infinite alternate;
+}
+.App .homepage .text p:nth-child(1) {
+  margin-bottom: 40px;
+}
+.App .homepage .text p:nth-child(2) {
+  margin-left: 60px;
+}
+.App .about-me {
+  top: 100vh;
+  padding: 150px 5% 50px;
+  display: flex;
+}
+.App .about-me .skills {
+  width: 50%;
+  padding-right: 50px;
+  border-right: 1px solid white;
+  font-size: 2.5vw;
+}
+.App .about-me .workExperience {
+  width: 50%;
+  padding-left: 50px;
+  font-size: 2.5vw;
+}
+.App .contact-me {
+  top: 200vh;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.App .contact-me > p {
+  font-size: 3vw;
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 1025px) {
+  .menu.offcanvas {
+    background-color: #22193A;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .menu.offcanvas .offcanvas-body {
+    padding: 16px 16px 30px;
+  }
+  .menu.offcanvas .offcanvas-body a {
+    display: block;
+    font-size: 28px;
+    margin: 0 50px 15px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+  }
+  .App {
+    position: relative;
+  }
+  .App .background {
+    position: absolute;
+    background-image: url("../../public/assets/images/mobile-background.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+  .App .background .circle {
+    display: none;
+  }
+  .App section {
+    position: unset;
+  }
+  .App .homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .App .homepage .photo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
+  }
+  .App .homepage .photo img {
+    margin-left: unset;
+    opacity: 1;
+  }
+  .App .homepage .text {
+    position: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 7vw;
+  }
+  .App .homepage .text p:nth-child(2) {
+    margin-left: unset;
+  }
+  .App .about-me {
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-direction: column;
+    padding: 50px 10%;
+  }
+  .App .about-me .skills {
+    width: auto;
+    padding-right: unset;
+    border: none;
+    margin-bottom: 50px;
+  }
+  .App .about-me .skills > p {
+    font-size: 7vw;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .App .about-me .workExperience {
+    width: auto;
+    padding-left: unset;
+  }
+  .App .about-me .workExperience > p {
+    font-size: 7vw;
+    text-align: center;
+    margin-bottom: 80px;
+    font-weight: bold;
+  }
+  .App .contact-me {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 150px;
+  }
+  .App .contact-me > p {
+    font-size: 7vw;
+  }
+}
+.nav-container {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  box-shadow: 0px 0px 15px black;
+  background-color: rgba(34, 25, 58, 0.8);
+}
+.nav-container p {
+  margin: 0 20px;
+}
+.nav-container ul {
+  display: flex;
+  margin-bottom: unset;
+}
+.nav-container ul li {
+  margin: 0 20px;
+}
+.nav-container ul li a {
+  opacity: 0.5;
+}
+.nav-container ul li a.active {
+  opacity: 1;
+}
+.nav-container button {
+  display: none;
+}
+
+@media screen and (max-width: 1025px) {
+  .nav-container {
+    height: 70px;
+    padding: 0 30px;
+  }
+  .nav-container > p {
+    margin: 0;
+  }
+  .nav-container button {
+    display: block;
+    background-color: unset;
+    border: none;
+    padding: 0;
+  }
+  .nav-container button i {
+    font-size: 35px;
+    color: rgba(222, 217, 239, 0.8392156863);
+  }
+  .nav-container .desktop-list {
+    display: none;
+  }
+}
+.accordion {
+  margin-top: 30px;
+}
+.accordion .accordion-item, .accordion .accordion-header button {
+  background-color: unset;
+  color: white;
+  font-size: 2vw;
+}
+.accordion .accordion-button:not(.collapsed) {
+  color: white;
+  font-weight: bold;
+  background-color: unset;
+  box-shadow: none;
+}
+.accordion .accordion-button:focus {
+  border-color: unset;
+  box-shadow: none;
+}
+.accordion .accordion-button::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+.accordion .accordion-body {
+  margin-left: 30px;
+  font-size: 1.5vw;
+}
+
+@media screen and (max-width: 1025px) {
+  .accordion .accordion-item h2 button {
+    font-size: 6vw;
+  }
+  .accordion .accordion-item .accordion-body {
+    font-size: 5vw;
+  }
+}
+.workExperience-container {
+  margin-top: 30px;
+}
+.workExperience-container .job-position {
+  font-size: 2vw;
+  font-weight: bold;
+  display: flex;
+}
+.workExperience-container .job-position p:nth-child(2) {
+  margin: 0 10px;
+}
+.workExperience-container .date {
+  font-size: 1.5vw;
+  background-color: #61577C;
+  padding: 0 18px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+.workExperience-container ul li {
+  font-size: 2vw;
+  list-style-type: disc;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1025px) {
+  .workExperience-container .job-position {
+    font-size: 5vw;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .workExperience-container .job-position p:nth-child(1) {
+    width: 100%;
+  }
+  .workExperience-container .date {
+    font-size: 3.5vw;
+  }
+  .workExperience-container ul li {
+    font-size: 5vw;
+  }
+}
+.ContactMe-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 8rem;
+}
+.ContactMe-container p {
+  font-size: 2rem;
+  opacity: 0;
+  transition: all 250ms linear;
+}
+.ContactMe-container i {
+  color: #CACAE6;
+  opacity: 0.8;
+  transition: all 150ms linear;
+  cursor: pointer;
+}
+.ContactMe-container i:hover {
+  opacity: 1;
+  transition: all 150ms linear;
+}
+.ContactMe-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ContactMe-container .show {
+  opacity: 1;
+  transition: all 250ms linear;
+  transform: translateY(10px);
+}
+
+@media screen and (max-width: 1025px) {
+  .ContactMe-container {
+    flex-direction: column;
+    padding: 0 5vw;
+    align-items: flex-start;
+  }
+  .ContactMe-container div {
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+  .ContactMe-container div i {
+    width: 12vw;
+    opacity: 1;
+    font-size: 8vw;
+    text-align: center;
+  }
+  .ContactMe-container div p {
+    opacity: 1;
+    margin-bottom: 0;
+    font-size: 6vw;
+    padding-left: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,47 @@
+.workExperience-container {
+  margin-top: 30px;
+  .job-position {
+    font-size: 2vw;
+    font-weight: bold;
+    display: flex;
+    p:nth-child(2) {
+      margin: 0 10px;
+    }
+  }
+  .date {
+    font-size: 1.5vw;
+    background-color: #61577C;
+    padding: 0 18px;
+    width: fit-content;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+  }
+  ul {
+    li {
+      font-size: 2vw;
+      list-style-type: disc;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .workExperience-container {
+    .job-position {
+      font-size: 5vw;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      p:nth-child(1) {
+        width: 100%;
+      }
+    }
+    .date {
+      font-size: 3.5vw;
+    }
+    ul {
+      li {
+        font-size: 5vw;
+      }
+    }
+  }
+}
